@@ -11,5 +11,6 @@
 </template>
 <script setup>
 import SidebarMenu from './components/sidebar/SidebarMenu.vue'
+import 'bootstrap/dist/css/bootstrap.css'; // Importa el archivo CSS de Bootstrap
 import { RouterView } from 'vue-router';
 </script>
