@@ -22,7 +22,7 @@
             <div class="logo-link">
                 <img src="/Microservices.png" alt="logo" class="logo"
                     style="width: 25px; height: 25px; margin-right: 0.5em;" />
-                <SidebarLink to="/about" style="width: 100%;">
+                <SidebarLink to="/microservices" style="width: 100%;">
                     Microservicios
                 </SidebarLink>
             </div>
