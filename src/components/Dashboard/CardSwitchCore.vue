@@ -8,12 +8,11 @@
         <div style="display: flex; justify-content: center; align-items: center; margin-top: 1rem;">
             <div>
                 <div style="display: flex; justify-content: start; align-items: center;">
-                    <img src="/Component 7.png" alt=""
-                        style="width: 2rem; height: 2rem; margin-top: .5rem; margin-top: .5rem;">
+                    <img src="/Component 7.png" alt="" style="width: 2rem; height: 2rem">
                     <p class="listado">Switch Central</p>
                 </div>
                 <div style="display: flex; justify-content: start; align-items: center;">
-                    <img src="/Component 7.png" alt="" style="width: 2rem; height: 2rem; margin-top: .5rem;">
+                    <img src="/Component 7.png" alt="" style="width: 2rem; height: 2rem;">
                     <p class="listado">Switch Nucleo</p>
                 </div>
             </div>
@@ -47,7 +46,7 @@ import CardDashboard from '../UI/CardDashboard.vue';
     padding: .5rem;
     border-radius: .5rem;
     position: absolute;
-    top: 7.5rem;
+    top: 6rem;
 }
 
 .listado {

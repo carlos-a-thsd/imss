@@ -46,7 +46,7 @@ import CardDashboard from '../UI/CardDashboard.vue';
     padding: .5rem;
     border-radius: .5rem;
     position: absolute;
-    top: 7.5rem;
+    top: 6rem;
 }
 
 .listado {
