@@ -1,8 +1,8 @@
 
 <template>
-  <SidebarMenu/>
-  <div :style="{ 'margin-left': sidebarWidth }">
-    <router-view/>
+  <SidebarMenu />
+  <div>
+    <router-view />
   </div>
   <!-- <ul>
     <li><router-link :to="{name: 'home'}">Home</router-link></li>
@@ -10,7 +10,6 @@
   </ul> -->
 </template>
 <script setup>
-  import SidebarMenu from './components/sidebar/SidebarMenu.vue'
-  import { sidebarWidth } from './components/sidebar/state';
-  import { RouterView, RouterLink } from 'vue-router';
+import SidebarMenu from './components/sidebar/SidebarMenu.vue'
+import { RouterView } from 'vue-router';
 </script>

@@ -1,13 +1,11 @@
 <template>
     <div>
-        <h1>this is home</h1>
+        <h1>Dashboard</h1>
     </div>
 </template>
 <script>
 export default {
-    
+
 }
 </script>
-<style>
-    
-</style>
+<style></style>
