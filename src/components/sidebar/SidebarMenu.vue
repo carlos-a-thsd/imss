@@ -2,7 +2,7 @@
     <div class="sidebar" :style="{ width: sidebarWidth }">
         <div>
             <img src="/imss 1.png" alt=""
-                style="width: 8rem; height: 10rem; margin-bottom: 1em; margin-top: 1em; margin-left: 1em;">
+                style="width: 5rem; height: 6rem; margin-bottom: 1em; margin-top: 1em; margin-left: 1em;">
         </div>
         <div class="container-date">
             <img src="/image-profile.png" alt="" style="width: 4rem; height: 4rem;" />
@@ -102,6 +102,8 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.075);
+    border-right: 1px solid #ccc;
 
 }
 
@@ -110,6 +112,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .collapse-icon {
@@ -126,6 +129,7 @@ export default {
 
 .container-date {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 1em;

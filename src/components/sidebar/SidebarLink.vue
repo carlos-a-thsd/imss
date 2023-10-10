@@ -43,9 +43,8 @@ export default {
     align-items: center;
     cursor: pointer;
     position: relative;
-    font-weight: 400;
+    font-weight: 500;
     user-select: none;
-    margin: 0.1em 0;
     padding: 0.4em;
     height: 1.5em;
     color: black;
