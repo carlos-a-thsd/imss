@@ -1,79 +1,38 @@
 <template>
-    <CardDashboard>
-        <div class="icon">
-            <img src="/Connect.png" alt="">
-        </div>
-        <h1 class="title">Firewalls</h1>
-        <div class="line" />
-        <div style="display: flex; justify-content: space-evenly;">
-            <div>
-                <div style="display: flex; justify-content: start; align-items: center;">
-                    <img src="/Component 1.png" alt="" style="width: 2rem; height: 2rem; ">
-                    <p class="listado">FotiGate</p>
-                </div>
-                <div style="display: flex; justify-content: start; align-items: center;">
-                    <img src="/Component 1.png" alt="" style="width: 2rem; height: 2rem;">
-                    <p class="listado">Cisco ASA</p>
-                </div>
-                <div style="display: flex; justify-content: start; align-items: center;">
-                    <img src="/Component 1.png" alt="" style="width: 2rem; height: 2rem;">
-                    <p class="listado">Zyxel</p>
-                </div>
-            </div>
-            <div>
-                <div style="display: flex; justify-content: start; align-items: center;">
-                    <img src="/Component 1.png" alt="" style="width: 2rem; height: 2rem;">
-                    <p class="listado">Barracuda</p>
-                </div>
-                <div style="display: flex; justify-content: start; align-items: center;">
-                    <img src="/Component 1.png" alt="" style="width: 2rem; height: 2rem;">
-                    <p class="listado">Stormshield</p>
-                </div>
-                <div style="display: flex; justify-content: start; align-items: center;">
-                    <img src="/Component 1.png" alt="" style="width: 2rem; height: 2rem;">
-                    <p class="listado">FotiGate</p>
-                </div>
+    <div class="firewalls-grid">
+        <div v-for="firewall in widgetData.firewalls.values" :key="firewall.name">
+            <div class="firewall-item">
+                <img :src="firewall.icon" alt="" style="width: 2rem; height: 2rem;">
+                <p class="listado">{{ firewall.name }}</p>
             </div>
         </div>
-    </CardDashboard>
+    </div>
 </template>
-
-<script setup>
-import CardDashboard from '../UI/CardDashboard.vue';
-
-
+  
+<script>
+export default {
+    props: ['widgetData']
+}
 </script>
-
+  
 <style scoped>
-.title {
-    color: #000;
-    font-weight: 500;
-    font-size: 1rem;
-    text-align: end;
-}
-
-.line {
-    width: 100%;
-    height: 1.5px;
-    background-color: #ccc;
-    margin-bottom: 1rem;
-}
-
-.icon {
-    background-color: #5DD39E;
-    width: 3rem;
-    display: flex;
-    justify-content: center;
-    padding: .5rem;
-    border-radius: .5rem;
-    position: absolute;
-    top: 6rem;
-}
-
 .listado {
     color: #000;
     font-weight: 500;
     font-size: .8rem;
     text-align: start;
 }
+
+.firewalls-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5rem;
+    margin-top: -.6rem;
+}
+
+.firewall-item {
+    display: flex;
+    align-items: center;
+}
 </style>
+  

@@ -1,58 +1,48 @@
 <template>
-    <CardDashboard>
-        <div class="icon">
-            <img src="/Switch.png" alt="">
-        </div>
-        <h1 class="title">Switches</h1>
-        <div class="line" />
-        <div style="display: flex; justify-content: space-between; width: 100%;">
-            <div style="display: flex; align-items: center; gap: 1rem;">
-                <h2 style="color: green; margin: 0;">5</h2>
-                <p style="margin: 0;">/</p>
-                <h2 style="color: gray; margin: 0;">10</h2>
+    <div style="display: flex; gap: 1rem; align-items: center; margin-top: 2.7rem;">
+        <div v-for="(switches, index) in widgetData.switches.values">
+            <div class=" number-container-divider">
+                <h2 class="number" style="color: green;">{{ switches.activos }}</h2>
+                <p class="divider">{{ switches.divider }}</p>
+                <h2 class="number" style="color: gray;">{{ switches.total }}</h2>
             </div>
-            <div style="display: flex; align-items: flex-end;">
-                <h2 style="color: red; margin: 0;">5</h2>
+            <div>
+                <h2 class="number-restant" style="color: red;">{{ switches.restante }}</h2>
             </div>
         </div>
-    </CardDashboard>
+    </div>
 </template>
 
-<script setup>
-import CardDashboard from '../UI/CardDashboard.vue';
+<script>
+export default {
+    props: ['widgetData']
+}
 
 </script>
 
 <style scoped>
-.title {
-    color: #000;
-    font-weight: 500;
-    font-size: 1rem;
-    text-align: end;
-}
-
-.line {
-    width: 100%;
-    height: 1.5px;
-    background-color: #ccc;
-    margin-bottom: 5rem;
-}
-
-.icon {
-    background-color: #5DD39E;
-    width: 3rem;
+.number-container-divider {
     display: flex;
-    justify-content: center;
-    padding: .5rem;
-    border-radius: .5rem;
-    position: absolute;
-    top: 6rem;
+    align-items: center;
 }
 
-.listado {
-    color: #000;
+.number-restant {
+    margin: 0;
+    position: relative;
     font-weight: 500;
-    font-size: .8rem;
-    text-align: start;
+    font-size: 1.5rem;
+    left: 6rem;
+}
+
+.number {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.divider {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.5rem;
 }
 </style>
