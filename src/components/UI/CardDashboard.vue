@@ -10,8 +10,8 @@
 
 <style scoped>
 .card-dashboard {
-    width: 220px;
-    height: 175px;
+    width: auto;
+    height: auto;
     background-color: #fff;
     border-radius: 0.5rem;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);

@@ -36,6 +36,7 @@ import CardDashboard from '../UI/CardDashboard.vue';
     width: 100%;
     height: 1.5px;
     background-color: #ccc;
+    margin-bottom: 2rem;
 }
 
 .icon {

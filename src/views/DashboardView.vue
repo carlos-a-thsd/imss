@@ -1,5 +1,5 @@
 <template>
-    <div style="margin-left: 2rem;">
+    <div style="margin-left: 4rem;">
         <h1 class="title-padre">Dashboard</h1>
         <div class="container-card">
             <CardFirewall />
@@ -7,6 +7,7 @@
             <CardSwitchCore />
             <CardNodo />
             <CardBalanceador />
+            <CardNodoECS />
         </div>
     </div>
 </template>
@@ -17,6 +18,7 @@ import CardSwitches from '../components/Dashboard/CardSwitches.vue';
 import CardSwitchCore from '../components/Dashboard/CardSwitchCore.vue';
 import CardNodo from '../components/Dashboard/CardNodo.vue';
 import CardBalanceador from '../components/Dashboard/CardBalanceador.vue';
+import CardNodoECS from '../components/Dashboard/CardNodoECS.vue';
 </script>
 
 <style scoped>
