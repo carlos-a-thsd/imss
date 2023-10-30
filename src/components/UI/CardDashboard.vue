@@ -33,7 +33,7 @@ export default {
     color: #000;
     font-weight: 500;
     font-size: 1rem;
-    text-align: end;
+    text-align: center;
 }
 
 .line {

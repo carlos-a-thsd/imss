@@ -2,6 +2,10 @@
     <div>
         <h1 class="title-padre">Dashboard</h1>
         <div class="container-card">
+            <CardDashboard title="Salud/Disponibilidad">
+                <Disponibilidad id="disponibilidad" :widgetData="dummyData" />
+            </CardDashboard>
+            <CardEndpoint :widgetData="dummyData" />
             <CardDashboard title="Firewall" icon="/Connect.png">
                 <CardFirewall :widgetData="dummyData" />
             </CardDashboard>
@@ -20,7 +24,6 @@
             <CardDashboard title="Nodo ECS" icon="/image 1.png">
                 <CardNodoECS :widgetData="dummyData" />
             </CardDashboard>
-            <CardEndpoint :widgetData="dummyData" />
         </div>
     </div>
 </template>
@@ -36,20 +39,21 @@ import CardNodo from '../components/Dashboard/CardNodo.vue';
 import CardBalanceador from '../components/Dashboard/CardBalanceador.vue';
 import CardNodoECS from '../components/Dashboard/CardNodoECS.vue';
 import CardEndpoint from "../components/Dashboard/CardEndpoint.vue";
+import Disponibilidad from "../components/Dashboard/Disponibilidad.vue";
 
 const dummyData = ref(getData());
 onMounted(() => {
     setInterval(() => {
         dummyData.value = getData();
-    }, 7000)
+    }, 15000)
 })
 </script>
 
 <style scoped>
 .container-card {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
     justify-content: center;
     margin: 0 auto;
 }
@@ -59,7 +63,6 @@ onMounted(() => {
         grid-template-columns: repeat(1, 1fr);
     }
 }
-
 
 .title-padre {
     color: #000;

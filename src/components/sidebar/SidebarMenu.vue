@@ -1,11 +1,15 @@
 <template>
     <div class="sidebar" :style="{ width: sidebarWidth }">
-        <div>
-            <img src="/imss 1.png" alt=""
-                style="width: 5rem; height: 6rem; margin-bottom: 1em; margin-top: 1em; margin-left: 1em;">
+        <div v-if="collapsed">
+            <img src="/imss 1.png" alt="" style="width: 2.5rem; height: 3rem; margin-bottom: 1em; margin-top: 1em;">
         </div>
-        <div class="container-date">
-            <img src="/image-profile.png" alt="" style="width: 4rem; height: 4rem;" />
+        <div v-else>
+            <img src="/imss 1.png" alt="" style="width: 5rem; height: 6rem; margin-bottom: 1em; margin-top: 1em;">
+        </div>
+        <div v-if="!collapsed" class="container-date">
+            <div>
+                <img src="/image-profile.png" alt="" style="width: 4rem; height: 4rem;" />
+            </div>
             <div>
                 <h2 class="name">Axel Tellez</h2>
                 <h2 class="time">{{ currentTime }}</h2>

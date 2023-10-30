@@ -1,10 +1,10 @@
 <template>
     <div class="firewalls-grid">
-        <div v-for="nodoECS in widgetData.nodoECS?.values" :key="nodoECS.name">
+        <div v-for="elemento in widgetData.nodosECS" :key="elemento.name">
             <div class="nodoECS-item">
-                <div
-                    :style="{ width: '1rem', height: '1rem', borderRadius: '50%', backgroundColor: nodoECS.color, marginRight: '0.5rem', marginTop: '-.5rem' }" />
-                <p class="listado">{{ nodoECS.name }}</p>
+                <span class="bullet"
+                    :class="{ 'red': elemento.value === 1, 'green': elemento.value === 2, 'yellow': elemento.value === 3 }"></span>
+                <p class="listado">{{ elemento.name }}</p>
             </div>
         </div>
     </div>
@@ -35,5 +35,11 @@ export default {
     display: flex;
     align-items: center;
     margin-top: -.6rem;
+}
+
+.bullet {
+    margin-top: -.7rem;
+    border-radius: 50%;
+    margin-right: .5rem;
 }
 </style>

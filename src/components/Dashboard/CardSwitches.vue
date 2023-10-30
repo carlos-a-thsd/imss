@@ -31,7 +31,7 @@ export default {
     position: relative;
     font-weight: 500;
     font-size: 1.5rem;
-    left: 6rem;
+    left: 2.2rem;
 }
 
 .number {

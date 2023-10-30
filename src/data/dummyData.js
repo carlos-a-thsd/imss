@@ -1,18 +1,237 @@
 export function getData() {
+  function generarValoresAleatorios(nombres, rangoMinimo, rangoMaximo) {
+    return nombres.map((nombre) => {
+      const valor = Math.random() * (rangoMaximo - rangoMinimo) + rangoMinimo;
+      return { name: nombre, value: Math.floor(valor) };
+    });
+  }
+
+  const disponibilidad = [
+    "Portal Payworks",
+    "Emisores",
+    "Comercios Digitales",
+    "Comercios Físicos",
+    "Transacciones Físicas",
+    "Transacciones Digitales",
+  ];
+  const disponibilidadConValores = generarValoresAleatorios(
+    disponibilidad,
+    1,
+    4
+  );
+  // Switches
+  const totalSwitches = 500;
+
+  const switchesActivos = Math.round(Math.random() * totalSwitches);
+  const switchesRestantes = totalSwitches - switchesActivos;
+
+  // Nodos
+  const totalNodos = 161;
+
+  const nodosActivos = Math.round(Math.random() * totalNodos);
+  const nodosRestantes = totalNodos - nodosActivos;
+
+  // Nodos ECS
+  const nameNodos = ["dev-ecs-node", "test-ecs-node", "prod-ecs-node"];
+  const nodosECS = generarValoresAleatorios(nameNodos, 1, 4);
+
+  // Endpoints
+  function endpooints() {
+    const formatedComa = (number) => {
+      return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    };
+
+    const responseTime = (Math.random() * 100).toFixed(0);
+    const solicitudesHTTP = formatedComa(Math.round(Math.random() * 10000));
+    const solicitudesJMX = formatedComa(Math.round(Math.random() * 10000));
+
+    return {
+      solicitudesHTTP,
+      responseTime,
+      solicitudesJMX,
+    };
+  }
+  const points = endpooints();
+
+  // Microservicios
+  const saludyservicios = [
+    "Microservicio 1",
+    "Microservicio 2",
+    "Microservicio 3",
+    "Microservicio 4",
+    "Microservicio 5",
+    "Microservicio 6",
+  ];
+  const totalservicios = 70;
+
+  const serviciosActivos = Math.round(Math.random() * totalservicios);
+  const serviciosRestantes = totalservicios - serviciosActivos;
+
+  // Retornar los datos
   return {
     saludyservicios: {
       values: [
-        { proyecto: "Nombre", activos: "50", inactivos: "3", total: "53" },
-        { proyecto: "Nombre", activos: "20", inactivos: "2", total: "22" },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
       ],
     },
     saludyservicios1: {
       values: [
-        { proyecto: "Nombre", activos: "50", inactivos: "3", total: "53" },
-        { proyecto: "Nombre", activos: "20", inactivos: "2", total: "22" },
+        {
+          proyecto: "Nombre 10",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
       ],
     },
-    // Inicio de las cards
+
+    saludyservicios2: {
+      values: [
+        {
+          proyecto: "Nombre 10",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+      ],
+    },
+
+    saludyservicios3: {
+      values: [
+        {
+          proyecto: "Nombre 10",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+        {
+          proyecto: "Nombre",
+          activos: serviciosActivos,
+          inactivos: serviciosRestantes,
+          total: totalservicios,
+        },
+      ],
+    },
+
     firewalls: {
       values: [
         { name: "FotiGate", icon: "/Component 1.png" },
@@ -33,19 +252,19 @@ export function getData() {
 
     nodo: {
       values: [
-        { activos: 151 },
+        { activos: nodosActivos },
         { divider: "/" },
-        { total: 161 },
-        { restante: 10 },
+        { total: totalNodos },
+        { restante: nodosRestantes },
       ],
     },
 
     switches: {
       values: [
-        { activos: 5 },
+        { activos: switchesActivos },
         { divider: "/" },
-        { total: 10 },
-        { restante: 5 },
+        { total: totalSwitches },
+        { restante: switchesRestantes },
       ],
     },
 
@@ -55,14 +274,9 @@ export function getData() {
         { name: "Switch Nucleo", icon: "/Component 8.png" },
       ],
     },
-
-    nodoECS: {
-      values: [
-        { name: "dev-ecs-node", color: "#5DD39E" },
-        { name: "test-ecs-node", color: "#c7d35d" },
-        { name: "prod-ecs-node", color: "#5DD39E" },
-      ],
-    },
+    disponibilidadConValores,
+    nodosECS,
+    points,
   };
 }
 export const data = getData();
